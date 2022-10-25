@@ -65,9 +65,10 @@ namespace Sektor44
         protected Membership? memberMembership;
         public Membership? MemberMembership { get { return memberMembership; } set { memberMembership = value; } }
 
-        public delegate Membership GetMembership(bool x, MembershipType memType);
+ 
+        protected delegate Membership GetMembership(bool x, MembershipType memType);
 
-        public static Membership DelBoy(bool x, MembershipType memType)
+        protected static Membership DelBoy(bool x, MembershipType memType)
         {
             if (x)
             {

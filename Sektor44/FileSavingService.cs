@@ -9,6 +9,11 @@ namespace Sektor44
 {
     public class FileSavingService : ISave
     {
+        /// <summary>
+        /// FileSavingService method for saving Member details in file using StreamWriter.
+        /// </summary>
+        /// <param name="member"> Type member. </param>
+        /// <param name="path"> Correct path where .txt file will be stored. </param>
         public void SaveMember(Member member, string path)
         {
             try
