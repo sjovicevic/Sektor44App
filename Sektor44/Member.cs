@@ -23,7 +23,7 @@ namespace Sektor44
             }
         }
 
-        private string? firstName;
+        protected string? firstName;
 
         public string? FirstName
         {
@@ -36,7 +36,7 @@ namespace Sektor44
             }
         }
 
-        public string? lastName;
+        protected string? lastName;
         public string? LastName
         {
             get { return lastName; }
@@ -48,23 +48,23 @@ namespace Sektor44
             }
         }
 
-        private DateTime birthDate;
-        public DateTime BirthDate { get; set; } = DateTime.MinValue;
 
-        private DateTime firstEntrance;
+        protected DateTime firstEntrance;
         public DateTime FirstEntrance { get { return firstEntrance; } set { firstEntrance = DateTime.Now; } }
 
-        private string? email;
+        protected string? email;
         public string? Email
         {
             get { return email; }
             set { if (value == null) email = "Unknown"; else email = value; }
         }
 
-        private bool student;
-        public bool Student { get; set; } = false;
+        protected bool student;
+        public bool Student { get { return student; } set { student = value; } }
 
-        private Membership? memberMembership;
+        protected Membership? memberMembership;
+        public Membership? MemberMembership { get { return memberMembership; } set { memberMembership = value; } }
+
         public delegate Membership GetMembership(bool x, MembershipType memType);
 
         public static Membership DelBoy(bool x, MembershipType memType)
@@ -87,8 +87,7 @@ namespace Sektor44
             this.FirstEntrance = _firstEntrance;
             this.Email = _email;
             this.Student = _student;
-            this.memberMembership = getmem(_student, _membership);
-            
+            this.MemberMembership = getmem(_student, _membership);
         }
 
 
